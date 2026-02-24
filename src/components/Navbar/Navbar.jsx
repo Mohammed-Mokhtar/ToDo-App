@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import { Link, NavLink } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../context/UserContext";
 import { initFlowbite } from "flowbite";
 
 export default function Navbar() {
