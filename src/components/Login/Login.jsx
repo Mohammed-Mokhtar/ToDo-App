@@ -11,7 +11,7 @@ export default function Login() {
   let [isLoading, setIsLoading] = useState(false);
   let [MessageSuccess, setMessageSuccess] = useState("");
   let [MessageFail, setMessageFail] = useState("");
-  
+
   let { setUserToken, setUserData } = useContext(UserContext);
 
   let navigate = useNavigate();
@@ -55,7 +55,6 @@ export default function Login() {
         setIsLoading(false);
         setMessageSuccess("");
         setMessageFail("user or password wrong");
-        // console.log(error);
       });
   };
 

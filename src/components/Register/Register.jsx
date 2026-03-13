@@ -48,7 +48,6 @@ export default function Register() {
     axios
       .post("https://todo-nti.vercel.app/user/signup", userData)
       .then((res) => {
-        console.log(res);
         setIsLoading(false);
         if (res.data.message === "user already exsist") {
           setMessageSuccess("");
@@ -63,7 +62,7 @@ export default function Register() {
       })
       .catch((error) => {
         setIsLoading(false);
-        console.log(error);
+        setMessageFail(error);
       });
   };
 

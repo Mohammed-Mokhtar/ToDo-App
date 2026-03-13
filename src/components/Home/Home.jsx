@@ -49,13 +49,11 @@ export default function Home() {
         headers: { token: localStorage.getItem("userToken") },
       })
       .then((response) => {
-        console.log(response);
         toast.success("Note created successfully");
         reset();
         getTodos();
       })
       .catch((error) => {
-        console.log("error", error);
         toast.error(`This didn't work.${error}`);
       })
       .finally(() => setIsLoading(false));
@@ -70,7 +68,7 @@ export default function Home() {
       .then((response) => {
         setTodoList(response.data.todos);
       })
-      .catch((error) => console.log("error", error))
+      .catch((error) => toast.error(`This didn't work.${error}`))
       .finally(() => setIsLoadingGet(false));
   };
 
@@ -84,7 +82,7 @@ export default function Home() {
         toast.success("Todo deleted successfully");
         getTodos();
       })
-      .catch((error) => console.log("error", error))
+      .catch((error) => toast.error(`This didn't work.${error}`))
       .finally(() => setIsLoadingDelete(false));
   };
 
@@ -103,7 +101,7 @@ export default function Home() {
         toast.success("Todo updated successfully");
         closeModalRef.current.click();
       })
-      .catch((error) => console.log("error", error))
+      .catch((error) => toast.error(`Todo failed to update${error}`))
       .finally(() => setIsLoadingUpdate(false));
   };
 
